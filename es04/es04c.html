@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" href="es04c.css">
+</head>
+<body>
+
+   <div class="calc-card">
+        <h1>Calcolatrice Web</h1>
+        
+        <div class="input-group">
+            <input type="number" id="num1" placeholder="Primo numero">
+            
+            <select id="operazione">
+                <option value="som">Addizione (+)</option>
+                <option value="sot">Sottrazione (-)</option>
+                <option value="mol">Moltiplicazione (×)</option>
+                <option value="div">Divisione (÷)</option>
+            </select>
+
+            <input type="number" id="num2" placeholder="Secondo numero">
+        </div>
+
+        <button id="btnCalcola">Calcola Risultato</button>
+
+        <div id="risultato" class="result-box">Inizia un calcolo...</div>
+    </div>
+
+    <script src="es04c.js"></script>
+    
+</body>
+</html>

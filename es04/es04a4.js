@@ -2,7 +2,7 @@ const args = process.argv.slice(2);
 
   if (args.length === 0) {
     console.log("ERRORE! Inserisci num operazione num");
-    console.log("Esempio: node calc.js 5 som 3");
+    console.log("Esempio: node es04a4.js 5 som 3");
     console.log("operazione valide: Somma: som, Sottrazione , sot, Moltiplicazione: molt, Divisione: div");
     process.exit(1); // per terminare il programma
   }
