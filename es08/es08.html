@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Es08 </title>
+    <style>
+        :root { --primary: #2563eb; --bg: #f8fafc; --card: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: #1e293b; padding: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--card); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+        h1 { font-size: 1.25rem; margin-top: 0; color: var(--primary); border-bottom: 2px solid #eff6ff; padding-bottom: 0.5rem; }
+        input { width: calc(100% - 24px); padding: 10px; margin: 8px 0; border: 1px solid #cbd5e1; border-radius: 6px; transition: all 0.3s; outline: none; }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; transition: 0.3s; font-weight: 500; }
+        hr { border: 0; height: 1px; background: #e2e8f0; margin: 1.5rem 0; }
+        progress { width: 100%; height: 12px; border-radius: 10px; }
+        progress::-webkit-progress-bar { background-color: #e2e8f0; border-radius: 10px; }
+        progress::-webkit-progress-value { border-radius: 10px; transition: width 0.5s; }
+        .errore { color: #dc2626; font-size: 0.875rem; display: none; margin-top: 4px; }
+        .feedback { font-size: 0.9rem; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <header style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;"> Es08 </h2>
+        <p style="color: #64748b;">Esercitazioni integrate di validazione DOM</p>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <h1>1-3: Input & Focus</h1>
+            <label>Codice Fiscale (Upper):</label>
+            <input type="text" id="codice_fiscale" placeholder="mrossi80..." maxlength="16">
+            <label>Campo Dinamico:</label>
+            <input type="text" id="campoDinamico" placeholder="Clicca qui...">
+            <button>Invia Dati</button>
+        </div>
+
+        <div class="card">
+            <h1>4 & 7: Interazione & Output</h1>
+            <p id="testoDaNascondere">Questo testo è sensibile e può essere rimosso.</p>
+            <button id="btnNascondi">Nascondi Testo</button>
+            <hr>
+            <button id="btnMostra">Trigger Messaggio</button>
+            <p id="output7" class="feedback"></p>
+        </div>
+
+        <div class="card">
+            <h1>5-6: Validazione Semplice</h1>
+            <label>Password:</label>
+            <input type="password" id="password">
+            <label>Ripeti Password:</label>
+            <input type="password" id="ripetiPassword">
+            <span id="messaggioErrore" class="errore">Le password non coincidono!</span>
+            <hr>
+            <label>Test Requisiti (Sfondo):</label>
+            <input type="password" id="pass" placeholder="Min. 8 caratteri">
+        </div>
+
+        <div class="card">
+            <h1>8: Strength Meter</h1>
+            <label>Inserisci Password:</label>
+            <input type="password" id="passInput">
+            <progress id="barraForza" value="0" max="100"></progress>
+            <p id="output8" class="feedback">Sicurezza: In attesa...</p>
+        </div>
+
+        <div class="card">
+            <h1>9-11: Generatore Email</h1>
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="cognome" placeholder="Cognome">
+            <button id="btnGeneraEmail">Genera Manuale</button>
+            <input type="text" id="emailRisultato" readonly placeholder="email@dominio.it" style="background: #f1f5f9">
+            <hr>
+            <label>Generazione al Change:</label>
+            <div style="display: flex; gap: 5px;">
+                <input type="text" id="nomeChange" placeholder="Nome">
+                <input type="text" id="cognomeChange" placeholder="Cognome">
+            </div>
+            <input type="text" id="emailRisultatoChange" readonly placeholder="risultato.auto@dominio.it" style="background: #f1f5f9">
+        </div>
+
+        <div class="card">
+            <h1>12: Storico Password</h1>
+            <label>Vecchia Password:</label>
+            <input type="password" id="oldPass">
+            <label>Nuova Password:</label>
+            <input type="password" id="newPass">
+            <p id="outputSomiglianza" class="feedback"></p>
+        </div>
+    </div>
+
+    <script src="es08.js"></script>
+</body>
+</html>
