@@ -38,7 +38,7 @@ document.getElementById("pass").addEventListener("input", function() {
 // --- 7. Messaggio Output ---
 document.getElementById("btnMostra").addEventListener("click", () => {
     const out = document.getElementById("output7");
-    out.textContent = "✅ Azione eseguita con successo!";
+    out.textContent = " Azione eseguita con successo!";
     out.style.color = "#2563eb";
 });
 
@@ -73,7 +73,7 @@ document.querySelectorAll("#nomeChange, #cognomeChange").forEach(el => el.addEve
 const oldP = document.getElementById("oldPass"), newP = document.getElementById("newPass"), outS = document.getElementById("outputSomiglianza");
 newP.addEventListener("input", () => {
     if (!newP.value) { outS.textContent = ""; return; }
-    if (newP.value === oldP.value) { outS.textContent = "❌ Identica alla vecchia!"; outS.style.color = "red"; }
-    else if (oldP.value.length >= 4 && newP.value.includes(oldP.value)) { outS.textContent = "⚠️ Troppo simile!"; outS.style.color = "orange"; }
-    else { outS.textContent = "✅ Password valida"; outS.style.color = "green"; }
+    if (newP.value === oldP.value) { outS.textContent = " Identica alla vecchia!"; outS.style.color = "red"; }
+    else if (oldP.value.length >= 4 && newP.value.includes(oldP.value)) { outS.textContent = " Troppo simile!"; outS.style.color = "orange"; }
+    else { outS.textContent = " Password valida"; outS.style.color = "green"; }
 });
